@@ -79,3 +79,16 @@ body {
 .key.extra:active {
 	background-color: #303030;
 }
+
+/* copy right */
+
+.copyright {
+	text-align: center;
+	margin: 15px;
+	color: rgb(68, 68, 68);
+}
+.copyright a {
+	text-decoration: none;
+
+	color: rgb(17, 17, 17);
+}
