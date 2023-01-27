@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>password generator</title>
+		<link rel="stylesheet" href="styles.css" />
+		<script src="scripts.js" defer></script>
+	</head>
+	<body>
+		<h1 class="title">Password Generator</h1>
+		<main>
+			<div class="container">
+				<div class="pass-section">
+					<div class="pass-section-main">
+						<p class="ur-pass">your password:</p>
+						<div id="generated-pass">click generate pass...</div>
+						<p id="copy">click here to copy <span id="copied" style="color: green; display: none">: copied :)</span></p>
+						<div id="custom-pass">
+							<div>
+								<label for="pass-length">Password Length: </label>
+								<input type="number" name="passLength" id="pass-length-box" min="0" max="30" value="8" />
+								<input id="pass-length-range" type="range" min="0" max="30" value="8" />
+							</div>
+							<div class="checkbox-inputs">
+								<div>
+									<label for="uppercase">Uppercase</label>
+									<input class="check" type="checkbox" name="uppercase" id="uppercase" /><br />
+									<label for="lowercase">Lowercase</label>
+									<input class="check" type="checkbox" name="lowercase" id="lowercase" /><br />
+								</div>
+								<div>
+									<label for="numbers">Numbers</label>
+									<input class="check" type="checkbox" name="numbers" id="numbers" /><br />
+									<label for="symbols">Symbols</label>
+									<input class="check" type="checkbox" name="symbols" id="symbols" /><br />
+								</div>
+							</div>
+							<p id="warning" style="color: red; text-align: center; display: none">at least check one checkboxes</p>
+							<button id="generat-btn">Generate Password</button>
+						</div>
+					</div>
+				</div>
+				<div class="tutorial">
+					<img class="lock-logo" src="images/lock.png" alt="logo of a security log" />
+					<p><b> what is a strong password?</b></p>
+					<br />
+					<p>
+						at least 15 characters <br />
+						uppercase letters<br />
+						lowercase letters<br />
+						numbers<br />
+						symbols, such as:<br />
+						~! @#$%^&*<br />
+						()_-+={[}]<br />
+						|/:;<,>.?/<br />
+					</p>
+				</div>
+			</div>
+		</main>
+		<p class="copyright">
+			created by Sneha Lata Nayak from
+			<a href="https://github.com/nayaksneha07482">@SnehaCode</a>
+		</p>
+	</body>
+</html>
