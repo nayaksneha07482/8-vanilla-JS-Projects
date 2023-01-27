@@ -54,3 +54,17 @@ body {
 	background-color: transparent;
 	margin: 20px 0;
 }
+.key {
+	width: 20%;
+	height: 65px;
+	border-radius: 14px;
+	background: #e8e8e8;
+	box-shadow: 5px 5px 10px #d3d3d3, -5px -5px 10px #fdfdfd;
+	font-size: 25px;
+	text-align: center;
+	padding-top: 15px;
+	margin: 7px;
+	color: rgb(78, 78, 78);
+	cursor: pointer;
+	transition: background 0.3s;
+}
