@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	backdrop-filter: blur(5px);
+}
+body {
+	background-color: rgb(241, 241, 241);
+	font-family: "Barlow", sans-serif;
+	color: rgb(90, 90, 90);
+	background: url("images/bg1.jpeg") center center fixed;
+	background-size: cover;
+	height: 100vh;
+}
+main {
+	display: flex;
+	justify-content: center;
+	margin-top: 80px;
+}
+.title {
+	padding-top: 40px;
+	font-size: 50px;
+	text-align: center;
+	color: rgb(40, 89, 196);
+}
+.container {
+	background-color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+	border-radius: 20px;
+	overflow: auto;
+	background-color: transparent;
+	background: rgba(255, 255, 255, 0.35);
+	box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.3);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* generate password section */
+
+.pass-section {
+	width: 50%;
+	padding: 30px;
+	background-color: rgb(255, 255, 255);
+}
+#generated-pass {
+	width: 100%;
+	min-height: 40px;
+	border-radius: 5px;
+	background-color: rgb(241, 241, 241);
+	text-align: center;
+	padding-top: 10px;
+	font-size: 18px;
+	font-weight: 500;
+	color: rgb(99, 99, 99);
+}
+.ur-pass {
+	margin-bottom: 5px;
+	font-size: 15px;
+}
+#copy {
+	text-align: center;
+	font-size: smaller;
+	margin-top: 10px;
+	cursor: pointer;
+}
+#custom-pass {
+	margin-top: 40px;
+}
+#custom-pass div {
+	padding-top: 20px;
+}
+#custom-pass button {
+	margin-top: 20px;
+	display: block;
+	width: 100%;
+	height: 40px;
+	border: none;
+	border-radius: 10px;
+	background-color: #3c8cbc;
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
+input[type="range"] {
+	width: 100%;
+	margin-top: 10px;
+}
+input[type="number"] {
+	float: right;
+	text-align: center;
+	border: none;
+	background-color: rgb(238, 238, 238);
+	padding: 5px;
+	width: 50px;
+	border-radius: 5px;
+}
+.checkbox-inputs {
+	display: flex;
+	justify-content: space-around;
+}
+.checkbox-inputs input {
+	margin-bottom: 15px;
+}
+
+/* tutorial section */
+
+.tutorial {
+	width: 50%;
+	padding: 30px;
+	text-align: center;
+	color: white;
+	font-size: larger;
+}
+.lock-logo {
+	width: 100px;
+	margin-bottom: 20px;
+}
+
+/* copy right */
+
+.copyright {
+	text-align: center;
+	margin-top: 30px;
+	color: rgb(163, 163, 163);
+}
+.copyright a {
+	text-decoration: none;
+
+	color: rgb(163, 163, 163);
+}
+
+/* responsive design */
+
+@media screen and (max-width: 1050px) {
+	.container {
+		width: 80%;
+	}
+}
+@media screen and (max-width: 725px) {
+	.container {
+		display: block;
+	}
+	.pass-section {
+		width: 100%;
+	}
+	.tutorial {
+		width: 100%;
+	}
+}
