@@ -29,3 +29,19 @@ body {
 	box-shadow: 10px 10px 20px #cacaca, -10px -10px 20px #ffffff;
 	margin-top: 30px;
 }
+.calc-box {
+	width: 90%;
+	min-height: 100px;
+	align-items: center;
+	margin-top: 20px;
+	border-radius: 10px 10px 0 0;
+	background: #e8e8e8;
+	box-shadow: inset 7px 7px 14px #cccccc, inset -7px -7px 14px #ffffff;
+	color: #6e6e6e;
+	text-align: center;
+	padding-top: 40px;
+	font-size: 22px;
+}
+[contentEditable="true"]:empty:not(:focus):before {
+	content: attr(data-text);
+}
