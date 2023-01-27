@@ -68,3 +68,14 @@ body {
 	cursor: pointer;
 	transition: background 0.3s;
 }
+.key:active {
+	background: linear-gradient(145deg, #d1d1d1, #f8f8f8);
+}
+.key.extra {
+	border-radius: 14px;
+	background: #121212;
+	color: #afafaf;
+}
+.key.extra:active {
+	background-color: #303030;
+}
