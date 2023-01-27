@@ -14,3 +14,11 @@ let upperCaseChars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"
 let lowerCaseChars = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let numbersChar = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let symbolsChar = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "[", "}", "]", "|", "/", ":", ";", ",", ">", ".", "?"];
+
+passLengthRange.addEventListener("input", syncPassLength);
+passLengthBox.addEventListener("input", syncPassLength);
+function syncPassLength(e) {
+	passLengthBox.value = e.target.value;
+	passLengthRange.value = e.target.value;
+	passLength = passLengthBox.value;
+}
