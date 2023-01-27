@@ -22,3 +22,49 @@ function syncPassLength(e) {
 	passLengthRange.value = e.target.value;
 	passLength = passLengthBox.value;
 }
+
+
+let addToDom = (newPass) => {
+	generateBox.innerHTML = newPass.join("");
+};
+
+let newPassGenerator = (isUpper, isLower, isNumber, isSymbol) => {
+	let allValidChars = [];
+	if (isUpper == true) allValidChars = allValidChars.concat(upperCaseChars);
+	if (isLower == true) allValidChars = allValidChars.concat(lowerCaseChars);
+	if (isNumber == true) allValidChars = allValidChars.concat(numbersChar);
+	if (isSymbol == true) allValidChars = allValidChars.concat(symbolsChar);
+
+	let generatedPass = [];
+	let randIndex;
+	let i = passLength;
+	console.log("allValidChars:", allValidChars);
+
+	while (i != 0) {
+		randIndex = Math.floor(Math.random() * allValidChars.length);
+		generatedPass = generatedPass.concat(allValidChars[randIndex]);
+		console.log("randIndex:", randIndex);
+		console.log("allValidChars[randIndex]:", allValidChars[randIndex]);
+		console.log("generatedpass:", generatedPass);
+		i--;
+	}
+	addToDom(generatedPass);
+};
+
+btnGenerate.addEventListener("click", () => {
+	if (!uppercaseCheck.checked && !lowercaseCheck.checked && !numbersCheck.checked && !symbolsCheck.checked) {
+		document.getElementById("warning").style.display = "block";
+	} else {
+		document.getElementById("warning").style.display = "none";
+		newPassGenerator(uppercaseCheck.checked, lowercaseCheck.checked, numbersCheck.checked, symbolsCheck.checked);
+	}
+});
+
+copyPass.addEventListener("click", (e) => {
+	window.navigator.clipboard.writeText(generateBox.innerHTML);
+	document.querySelector("#copied").style.display = "inline-block";
+
+	setTimeout(() => {
+		document.querySelector("#copied").style.display = "none";
+	}, 3000);
+});
