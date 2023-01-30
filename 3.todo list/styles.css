@@ -22,3 +22,30 @@ body {
 	justify-content: center;
 	position: relative;
 }
+h1 {
+	position: absolute;
+	top: 30%;
+	color: #d3d3d3;
+	font-size: 40px;
+}
+#add-btn {
+	margin-bottom: -30px;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+#add-btn .enter-btn {
+	min-height: 76px;
+	border: none;
+	background-color: #43973c;
+	border-radius: 10px;
+	font-size: larger;
+	color: white;
+	cursor: pointer;
+	padding: 20px 60px;
+	transition: 0.3s;
+}
+#add-btn .enter-btn:hover {
+	background-color: #58b150;
+}
