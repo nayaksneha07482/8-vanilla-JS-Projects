@@ -84,3 +84,94 @@ function noteToDom(title, description) {
 	addEvenForDeleteBtn();
 	addEvenForSubmitBtn();
 }
+
+//set local storage for storing data so it will not deleted if we refresh the page
+//structures
+
+let todos = [];
+let notes = [];
+
+window.addEventListener("load", localstorageToDom);
+function localstorageToDom() {
+	if (!localStorage.getItem("todos")) localStorage.setItem("todos", JSON.stringify(todos));
+	if (!localStorage.getItem("notes")) localStorage.setItem("notes", JSON.stringify(notes));
+
+	todos = JSON.parse(localStorage.getItem("todos"));
+	notes = JSON.parse(localStorage.getItem("notes"));
+
+	todos.forEach((todo) => {
+		todoToDom(todo.title);
+	});
+	notes.forEach((note) => {
+		noteToDom(note.title, note.description);
+	});
+	console.log("loaded");
+}
+function addTodoTolocalStorage(todoTitle) {
+	todos.push({ title: todoTitle, done: false });
+	localStorage.setItem("todos", JSON.stringify(todos));
+	console.log("addTodoTolocalStorage");
+}
+function addNotesTolocalStorage(noteTitle, noteDescription) {
+	notes.push({ title: noteTitle, description: noteDescription });
+	localStorage.setItem("notes", JSON.stringify(notes));
+	console.log("addNotesTolocalStorage");
+}
+
+//todo and note buttons functionality
+function addEvenForDeleteBtn() {
+	let deleteBtn = document.querySelectorAll(".delete-btn");
+	deleteBtn.forEach((btn) => {
+		btn.addEventListener("click", deleteCard);
+	});
+}
+addEvenForDeleteBtn();
+
+function deleteCard() {
+	this.parentElement.parentElement.remove();
+	if (this.parentElement.parentElement.querySelector(".todo-text")) {
+		let tempTodos = JSON.parse(localStorage.getItem("todos"));
+		let todoTitle = this.parentElement.parentElement.querySelector(".todo-text").innerHTML;
+		todos = tempTodos.filter((todo) => {
+			return todo.title != todoTitle;
+		});
+		localStorage.setItem("todos", JSON.stringify(todos));
+	} else {
+		let tempNote = JSON.parse(localStorage.getItem("notes"));
+		let noteTitle = this.parentElement.parentElement.querySelector(".note-title").innerHTML;
+		notes = tempNote.filter((note) => {
+			return note.title != noteTitle;
+		});
+		localStorage.setItem("notes", JSON.stringify(notes));
+	}
+}
+
+function addEvenForSubmitBtn() {
+	let submitBtn = document.querySelectorAll(".done-btn");
+	submitBtn.forEach((btn) => {
+		btn.addEventListener("click", completedCard);
+	});
+}
+addEvenForSubmitBtn();
+
+function completedCard() {
+	let completedTodo = this.parentElement.parentElement;
+	let completedTodoTitle = this.parentElement.parentElement.querySelector(".todo-text").innerHTML;
+	todos = JSON.parse(localStorage.getItem("todos"));
+
+	todos.forEach((todo) => {
+		if (todo.title == completedTodoTitle) {
+			if (todo.done == false) {
+				todo.done = true;
+				completedTodo.style.backgroundColor = "#4ea347";
+				completedTodo.style.color = "white";
+				localStorage.setItem("todos", JSON.stringify(todos));
+			} else {
+				todo.done = false;
+				completedTodo.style.backgroundColor = "white";
+				completedTodo.style.color = "rgb(65, 65, 65)";
+				localStorage.setItem("todos", JSON.stringify(todos));
+			}
+		}
+	});
+}
