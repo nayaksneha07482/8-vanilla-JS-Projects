@@ -5,8 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+	<script src="scripts.js" defer></script>
 </head>
 <body>
-    
+    <section class="background">
+        <h1>Notes and Todo List</h1>
+        <div id="add-btn">
+            <button class="enter-btn" id="new-todo">add a new ToDo</button>
+            <button class="enter-btn" id="new-note">Add a new Note</button>
+        </div>
+    </section>
+    <section id="popups" style="display: none">
+        <form id="newtodo-popup" style="display: none">
+            <img class="close-popup-btn" src="images/close-icon.png" alt="close" />
+            <label for="newtodo-title">Enter todo:</label>
+            <input type="text" id="newtodo-title" autocomplete="off" />
+            <button id="todo-submit">Add to notes</button>
+        </form>
+        <form id="newnote-popup" style="display: none">
+            <img class="close-popup-btn" src="images/close-icon.png" alt="close" />
+            <label for="newnote-title">Enter note title:</label>
+            <input type="text" id="newnote-title" autocomplete="off" /><br />
+            <label for="newnote-description">Enter note description:</label>
+            <textarea name="textDescription" id="newnote-description" cols="30" rows="10"></textarea>
+            <button id="note-submit">Add to notes</button>
+        </form>
+    </section>
+    <div class="center-lists">
+        <section id="todo-note">
+            <div class="todo-list"></div>
+            <div class="note-list"></div>
+        </section>
+    </div>
+    <p class="copyright">
+        created by Alireza Tayebinejad from
+        <a href="https://github.com/vibracode">@vibracode</a>
+    </p>
 </body>
 </html>
