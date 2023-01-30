@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	font-family: "Barlow", sans-serif;
+	background-color: #e8e8e8;
+	color: rgb(65, 65, 65);
+}
+
+/* head */
+
+.background {
+	background: url("images/bg1.jpg") no-repeat;
+	background-size: cover;
+	background-position-y: center;
+	height: 200px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	position: relative;
+}
