@@ -49,3 +49,83 @@ h1 {
 #add-btn .enter-btn:hover {
 	background-color: #58b150;
 }
+/* popups */
+
+#popups {
+	position: absolute;
+	top: 0;
+	z-index: 9;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#newnote-popup {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	width: 50%;
+	padding: 30px;
+	box-shadow: 0 0 40px rgb(112, 112, 112);
+	position: relative;
+}
+#newnote-title {
+	min-height: 40px;
+}
+#newnnewtodoote-description {
+	min-height: 80px;
+}
+#newnote-popup button {
+	background-color: #43973c;
+	border: none;
+	color: white;
+	padding: 15px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#newnote-popup button:hover {
+	background-color: #59b651;
+}
+#newnote-popup img {
+	width: 25px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	cursor: pointer;
+}
+#newtodo-popup {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	width: 50%;
+	padding: 30px;
+	position: relative;
+	box-shadow: 0 0 40px rgb(112, 112, 112);
+}
+#newtodo-title {
+	min-height: 40px;
+}
+#newtodo-description {
+	min-height: 80px;
+}
+#newtodo-popup button {
+	background-color: #43973c;
+	border: none;
+	color: white;
+	padding: 15px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+#newtodo-popup button:hover {
+	background-color: #59b651;
+}
+#newtodo-popup img {
+	width: 25px;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	cursor: pointer;
+}
