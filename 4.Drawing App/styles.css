@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Barlow", sans-serif;
+	overflow: hidden;
+	width: 100vw;
+}
+#drawing-canvas {
+}
+header {
+	display: flex;
+	justify-content: center;
+}
+.tools {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	position: fixed;
+	top: 20px;
+	padding: 10px;
+	border: solid 1px rgb(185, 185, 185);
+	border-radius: 12px;
+	opacity: 0.7;
+	transition: opacity 0.5s;
+}
+.tools:hover {
+	opacity: 1;
+}
+
+.tools .colors {
+	width: 25px;
+	height: 25px;
+	margin: 3px;
+	border-radius: 100%;
+	cursor: pointer;
+	transition: 0.2s;
+}
+.tools .colors:hover {
+	transform: scale(1.2);
+}
+.tools #color-picker {
+	background-image: linear-gradient(to right, rgb(255, 0, 0), rgb(89, 0, 255), rgb(0, 247, 255), rgb(0, 255, 13), rgb(238, 255, 0), rgb(255, 60, 0));
+	border: none;
+	border-radius: 5px;
+}
+#pen-width {
+	margin-left: 5px;
+	background-color: rgb(207, 207, 207);
+	border: none;
+	padding: 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+}
+.tools button {
+	margin-left: 5px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+.clear-btn {
+	background-color: rgb(221, 63, 63);
+	color: white;
+}
+.save-btn {
+	background-color: rgb(44, 160, 44);
+	color: white;
+}
