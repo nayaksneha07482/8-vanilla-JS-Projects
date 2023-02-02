@@ -39,3 +39,44 @@ header #get-city {
 	outline: none;
 	box-shadow: 0 8px 32px 0 rgba(31, 31, 31, 0.37);
 }
+main .info-container {
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 8px 32px 0 rgba(31, 31, 31, 0.37);
+	backdrop-filter: blur(7px);
+	-webkit-backdrop-filter: blur(7px);
+	border-radius: 20px;
+	max-width: 300px;
+	min-height: 380px;
+	position: relative;
+	margin: auto;
+	margin-top: 30px;
+	padding: 20px;
+	text-align: center;
+}
+#get-city {
+	text-align: center;
+}
+.city-name {
+	font-size: 23px;
+	margin: 20px 0;
+}
+.weather-deg {
+	font-size: 80px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+}
+.weather-condition {
+	margin-bottom: 20px;
+}
+
+/* copyright */
+.copyright {
+	text-align: center;
+	margin: 15px;
+	color: rgb(202, 202, 202);
+}
+.copyright a {
+	text-decoration: none;
+
+	color: rgb(240, 240, 240);
+}
