@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Barlow", sans-serif;
+	background-image: url("images/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 70%;
+	height: 100vh;
+}
+header {
+	display: flex;
+	flex-direction: column;
+}
+header .title {
+	margin-top: 40px;
+	text-align: center;
+	text-shadow: 0 0 50px black;
+}
+header .weather-icon {
+	width: 60px;
+	margin-bottom: -20px;
+	margin-right: 20px;
+}
+header #get-city {
+	width: 200px;
+	position: relative;
+	margin: auto;
+	margin-top: 50px;
+	height: 50px;
+	border: none;
+	border-radius: 10px;
+	padding: 0 10px;
+	outline: none;
+	box-shadow: 0 8px 32px 0 rgba(31, 31, 31, 0.37);
+}
