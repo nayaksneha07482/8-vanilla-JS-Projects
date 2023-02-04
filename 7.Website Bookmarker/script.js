@@ -103,3 +103,25 @@ function loadFromLocalStorage() {
 		}	
 	}	
 }
+
+function deleteItem(e) {
+	if(e.target.classList.contains('cross')) {
+		let title = e.target.parentElement.firstChild.textContent;
+		let url = e.target.parentElement.firstChild.getAttribute('href');
+		removeFromLocalStorage(url, title);
+		e.target.parentElement.remove();
+	}
+}
+
+function removeFromLocalStorage(url, title) {
+	let storageUrls = getFromLocalStorage('url');
+	let storageTitles = getFromLocalStorage('title');
+	
+	// modifing the above arrays to remove the clicked content (title and url)
+	storageUrls.splice(storageUrls.indexOf(url), 1);
+	storageTitles.splice(storageTitles.indexOf(title), 1);
+	
+	localStorage.setItem('url', JSON.stringify(storageUrls));
+	localStorage.setItem('title', JSON.stringify(storageTitles));
+	
+}
