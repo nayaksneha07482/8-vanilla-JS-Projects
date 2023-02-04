@@ -50,3 +50,25 @@ function addToList(e) {
 		titleInput.value = '';
 	}
 }
+
+function showListItem(url, title) {
+	// creating the list item
+	let li = document.createElement('li');
+	let a = document.createElement('a');
+	a.setAttribute('href', url);
+	a.setAttribute('target', '_blank');
+	a.textContent = title;
+	li.appendChild(a);
+	
+	// adding the edit and delete button to the item
+	let edit = document.createElement('div');
+	let cross = document.createElement('div');
+	edit.textContent = "Edit";
+	cross.textContent = "X";
+	edit.setAttribute('class', 'edit');
+	cross.setAttribute('class', 'cross');
+	li.appendChild(edit);
+	li.appendChild(cross);
+	
+	list.appendChild(li);
+}
