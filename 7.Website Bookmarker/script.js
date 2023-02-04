@@ -72,3 +72,34 @@ function showListItem(url, title) {
 	
 	list.appendChild(li);
 }
+
+function saveToLocalStorage(url, title) {
+	let storageItemsUrl = getFromLocalStorage('url');
+	let storageItemsTitle = getFromLocalStorage('title');
+	storageItemsUrl.push(url);
+	storageItemsTitle.push(title);
+	localStorage.setItem('url', JSON.stringify(storageItemsUrl));
+	localStorage.setItem('title', JSON.stringify(storageItemsTitle));
+}
+
+// get an empty array (for the very first item) or the array stored in local storage
+function getFromLocalStorage(item) {
+	let items = localStorage.getItem(item);
+	if(items == null) {
+		items = [];
+	}
+	else {
+		items = JSON.parse(items);
+	}
+	return items;
+}
+
+function loadFromLocalStorage() {
+	let url = JSON.parse(localStorage.getItem('url'));
+	let title = JSON.parse(localStorage.getItem('title'));
+	if(url.length != 0 && url.length != 0) {
+		for(let i = 0; i < url.length; i++) {
+			showListItem(url[i], title[i]);
+		}	
+	}	
+}
