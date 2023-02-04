@@ -125,3 +125,18 @@ function removeFromLocalStorage(url, title) {
 	localStorage.setItem('title', JSON.stringify(storageTitles));
 	
 }
+
+function editItem(e) {
+	if(e.target.classList.contains('edit')) {
+		let element = e.target.parentElement;
+		let text = e.target.parentElement.textContent;
+		let url = e.target.parentElement.firstChild.getAttribute('href');
+		
+		// add a 'marker' class to the edited element
+		element.setAttribute('class', 'marker')
+		
+		urlInput.value = url;
+		// remove the last 5 characters(EditX) from the text and show it in the input box
+		titleInput.value = text.slice(0, text.length-5);
+	}
+}
