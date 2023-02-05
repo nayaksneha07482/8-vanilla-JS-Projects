@@ -145,3 +145,70 @@ body {
   .quizSection .questionContainer .answerCont .answer.correct p {
     color: #0f5132;
   }
+  .quizSection .questionContainer .nextBtnEl {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.5rem;
+  }
+  .quizSection .questionContainer .nextBtnEl button {
+    padding: 0.55rem 2rem;
+    border: none;
+    outline: none;
+    background-color: #67bece;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 2px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  .quizSection .questionContainer .nextBtnEl button:disabled {
+    background-color: #6b6b6b;
+  }
+  
+  .quizSection .questionContainer .resultTable {
+    width: 100%;
+  }
+  
+  .quizSection .questionContainer .resultTable tr {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .quizSection .questionContainer .resultTable,
+  .quizSection .questionContainer .resultTable th,
+  .quizSection .questionContainer .resultTable td {
+    border-collapse: collapse;
+    border: 1px solid #8e8c9b46;
+  }
+  .quizSection .questionContainer .resultTable td,
+  .quizSection .questionContainer .resultTable th {
+    padding: 1rem;
+    width: 100%;
+    text-align: left;
+  }
+  .questionContainer .restartCont {
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+  }
+  .questionContainer .restartCont button {
+    padding: 0.55rem 2rem;
+    border: none;
+    outline: none;
+    background-color: #67bece;
+    color: #fff;
+    font-weight: normal;
+    letter-spacing: 2px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 600px) {
+    .quizSection .bgImg {
+      background-position: center center;
+      background-size: cover;
+    }
+  }
+  
