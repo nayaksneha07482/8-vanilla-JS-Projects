@@ -58,3 +58,46 @@ body {
   width: 100%;
   margin-top: 1.52rem;
 }
+.quizSection .progressCont .progress {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85%;
+    max-width: 350px;
+    margin: 0% auto;
+  }
+  .quizSection .progressCont .progress .circle {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e5e5e5;
+    border-radius: 50%;
+  }
+  .quizSection .progressCont .progress .circle p {
+    color: #244974;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .quizSection .progressCont .progress .circle.correct {
+    background: #67bece;
+  }
+  .quizSection .progressCont .progress .circle.wrong {
+    background-color: #f8d7da;
+  }
+  .quizSection .progressCont .progress .circle.wrong p {
+    color: #842029;
+  }
+  .quizSection .questionContainer {
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 0.7rem;
+    padding: 2.2rem;
+    max-width: 500px;
+    margin: 0% auto;
+    margin-top: 2rem;
+  }
+  .quizSection .questionContainer .questions h1 {
+    color: #244974;
+  }
