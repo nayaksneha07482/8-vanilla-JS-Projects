@@ -85,3 +85,69 @@ function createProgress() {
     datas.forEach((data) => {
     createProgress();
 });
+
+// Create Quiz
+
+function createQuizChoices(data) {
+    const answerEl = document.createElement("div");
+    const attr = document.createAttribute("data-value");
+    attr.value = data;
+    answerEl.setAttributeNode(attr);
+    answerEl.className = `answer answer${++answerElCount}`;
+    const answerPara = document.createElement("p");
+    answerPara.innerHTML = data;
+    answerEl.appendChild(answerPara);
+    answerContEl.appendChild(answerEl);
+  
+    // Event Listener
+    answerEl.addEventListener("click", (e) => {
+      if (!isAnswerSelected) {
+        let allAnswerEl = answerContEl.querySelectorAll(`.answer`);
+        checkAnswer(answerEl, allAnswerEl);
+        isAnswerSelected = true;
+        nextBtnEl.disabled = false;
+        if (quizCount === shuffledQuizData.length - 1) {
+          nextBtnEl.innerHTML = `Show Result`;
+        }
+      }
+    });
+  }
+  
+  function createQuiz() {
+    let currentQuiz = shuffledQuizData[quizCount];
+    questionEl.innerHTML = currentQuiz.question;
+  
+    answerContEl.innerHTML = ``;
+  
+    currentQuiz.choices
+      .sort(() => 0.5 - Math.random())
+      .forEach((choice) => {
+        createQuizChoices(choice);
+      });
+  }
+  
+  createQuiz();
+  
+  function checkAnswer(selectedAnswerEl, allAnswerEl) {
+    let currentProgress = [...progressEl.querySelectorAll(".circle")];
+  
+    let currentQuizAnswer = shuffledQuizData[quizCount].answer;
+    let selectedAnswer = selectedAnswerEl.dataset.value;
+    if (selectedAnswer === currentQuizAnswer) {
+      selectedAnswerEl.classList.add("correct");
+      selectedAnswerEl.prepend(createCorrectIcon());
+      currentProgress[quizCount].classList.add("correct");
+      ++result;
+    } else if (selectedAnswer !== currentQuizAnswer) {
+      selectedAnswerEl.classList.add("wrong");
+      selectedAnswerEl.prepend(createWrongIcon());
+      currentProgress[quizCount].classList.add("wrong");
+      allAnswerEl.forEach((ans) => {
+        if (ans.dataset.value === currentQuizAnswer) {
+          ans.classList.add("correct");
+          ans.prepend(createCorrectIcon());
+        }
+      });
+    }
+  }
+  
