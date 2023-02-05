@@ -101,3 +101,47 @@ body {
   .quizSection .questionContainer .questions h1 {
     color: #244974;
   }
+  .quizSection .questionContainer .answerCont .answer {
+    border: 1px solid #2449746e;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.85rem;
+    line-height: 1.5;
+    margin: 1rem 0;
+    cursor: pointer;
+    background-color: transparent;
+    user-select: none;
+  }
+  .quizSection .questionContainer .answerCont .answer .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+  }
+  .quizSection .questionContainer .answerCont .answer .icon ion-icon {
+    font-size: 1.2rem;
+  }
+  .quizSection .questionContainer .answerCont .answer p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-left: 0.3rem;
+    color: #8e8c9b;
+  }
+  .quizSection .questionContainer .answerCont .answer.wrong {
+    background-color: #f8d7da;
+    color: #842029;
+    border-color: #f5c2c7;
+  }
+  .quizSection .questionContainer .answerCont .answer.wrong p {
+    color: #842029;
+  }
+  
+  .quizSection .questionContainer .answerCont .answer.correct {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    border-color: #badbcc;
+  }
+  .quizSection .questionContainer .answerCont .answer.correct p {
+    color: #0f5132;
+  }
