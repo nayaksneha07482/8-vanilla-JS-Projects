@@ -2,3 +2,6 @@
 javascript project
 Venla JS ecom
 HTML CSS JS EXPRESS NODE.JS  MONGODB REDES 
+
+
+mongoose nodmon
